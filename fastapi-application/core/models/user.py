@@ -9,4 +9,4 @@ from core.types.user_id import UserIdType
 class User(Base, IdIntMixin, SQLAlchemyBaseUserTable[UserIdType]):
     @classmethod
     def get_db(cls, session: AsyncSession):
-        return SQLAlchemyUserDatabase(session, User)
+        return SQLAlchemyUserDatabase(session, cls)
